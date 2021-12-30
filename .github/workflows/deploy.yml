@@ -1,0 +1,22 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Stop node projec, git pull, start project
+      uses: fifsky/ssh-action@master
+      with:
+        command: |
+          cd ~/malcolmb-bot
+          pm2 stop 0
+          git pull https://gabrieljkeller:${{ secrets.GH_KEY }}@github.com/gabrieljkeller/malcolmb-bot
+          pm2 start 0
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.PRIVATE_KEY}}
