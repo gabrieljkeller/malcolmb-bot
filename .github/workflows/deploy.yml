@@ -9,14 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Stop node projec, git pull, start project
-      uses: fifsky/ssh-action@master
+    - name: Stop node project, git pull, start project
+      uses: appleboy/ssh-action@master
       with:
-        command: |
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
+        port: 22
+        script: |
           cd ~/malcolmb-bot
           pm2 stop 0
           git pull https://gabrieljkeller:${{ secrets.GH_KEY }}@github.com/gabrieljkeller/malcolmb-bot
           pm2 start 0
-        host: ${{ secrets.HOST }}
-        user: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.PRIVATE_KEY}}
