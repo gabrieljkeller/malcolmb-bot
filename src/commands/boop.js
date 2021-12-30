@@ -17,7 +17,7 @@ module.exports = {
         setTimeout(() => {
             const emojis = [":smiling_imp:", ":smirk:", ":scream:", ":face_with_symbols_over_mouth:", ":pleading_face:", ":lipstick:", ":rotating_light:", ":woman_running:"]
 
-            interaction.channel.send("<@501212640392118272> **b o o p** " + emojis[Math.floor(Math.random() * emojis.length)]).then(msg => {
+            interaction.channel.send("<@501212640392118272> **b o o o p** " + emojis[Math.floor(Math.random() * emojis.length)]).then(msg => {
                 setTimeout(() => {
                     msg.delete()
                 }, 500)
