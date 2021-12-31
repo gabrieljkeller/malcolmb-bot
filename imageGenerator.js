@@ -44,16 +44,16 @@ Jimp.read(fileName)
                    .write(fileName);
         loadedImage.print(font, 180, 220, "no. " + padded)
                    .write(fileName);
-                   loadedImage.print(font, 180, 220, "no. " + padded)
-                   .write(fileName);
-                   loadedImage.print(font, 180, 220, "no. " + padded)
-                   .write(fileName);
-                   loadedImage.print(font, 180, 220, "no. " + padded)
-                   .write(fileName);
-                   loadedImage.print(font, 180, 220, "no. " + padded)
-                   .write(fileName);
-                   loadedImage.print(font, 180, 220, "no. " + padded)
-                   .write(fileName);
+        loadedImage.print(font, 180, 220, "no. " + padded)
+                .write(fileName);
+        loadedImage.print(font, 180, 220, "no. " + padded)
+                .write(fileName);
+        loadedImage.print(font, 180, 220, "no. " + padded)
+                .write(fileName);
+        loadedImage.print(font, 180, 220, "no. " + padded)
+                .write(fileName);
+        loadedImage.print(font, 180, 220, "no. " + padded)
+                .write(fileName);
     }).then(() => {
         resolve()
     })
