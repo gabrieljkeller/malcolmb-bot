@@ -3,7 +3,7 @@ const fs = require("fs");
 const { resolve } = require("path/posix");
 
 
-const generateImage = () => {
+async function generateImage() {
     return new Promise((resolve, reject) => {
         const counterData = fs.readFileSync(".counter", "utf-8")
 console.log(counterData);
